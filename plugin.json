@@ -1,0 +1,29 @@
+{
+	"id": "nodebb-plugin-cas",
+	"url": "https://github.com/NodeBB/nodebb-plugin-quickstart",
+  "library": "./library.js",
+  "nodeBBUrl": "http://nodebb.com:4567/login/cas",
+  "CASServerPrefix": "https://cas.com:8443/cas",
+  "userCenterPrefix": "http://school.thoughtworks.cn/user-center/register/index.html",
+  "CASLogoutUrl": "https://cas.com:8443/logout/cas",
+	"hooks": [
+    {
+      "hook": "static:app.load",
+      "method": "init"
+    },
+    {
+      "hook": "static:app.preload",
+      "method": "initLoginRedirect"
+    }
+  ],
+	"staticDirs": {
+    "static": "./static"
+  },
+  "less": [
+    "static/style.less"
+  ],
+  "scripts": [
+    "static/lib/main.js"
+  ],
+  "templates": "static/templates"
+}
